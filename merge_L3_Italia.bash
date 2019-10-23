@@ -3,14 +3,14 @@
 #python /mnt/data/home/hagolleo/PROG/S2/theia_download/theia_download.py -l 'Europe' -d 2019-05-01 -f 2019-05-31 --level LEVEL3A -a /mnt/data/home/hagolleo/PROG/S2/theia_download/config_hagolle.cfg -w France201808
 
 #Data are stored in France201808
-cd France201909
+cd $1
 #parallel -j8 unzip -o  ::: SENTINEL2?_201*.zip
 
 
 #print the command lines when executed
 set -x
 echo $PWD
-res=20 #Final resolution
+res=$2 #Final resolution
 
 #divide in 6 zones depending on the beginning of tilename
 for UTM in T32S T32T T33S T33T T34S 
